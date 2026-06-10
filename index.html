@@ -7,22 +7,34 @@
       name="description"
       content="dojo.haus creates fictional ephemera, narrative packaging, and collectible artifacts from worlds that almost feel real."
     />
-    <title>dojo.haus — Evidence of things that never happened.</title>
+    <meta name="theme-color" content="#f4eee4" />
+    <title>dojo.haus | Evidence of things that never happened.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@450;520;650;760;820&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
     <header class="site-header" aria-label="Site header">
-      <a class="brand-mark" href="#top" aria-label="dojo.haus home">dojo.haus</a>
+      <a class="brand-mark" href="#top" aria-label="dojo.haus home">
+        <span class="brand-symbol" aria-hidden="true">d.h</span>
+        <span>dojo.haus</span>
+      </a>
       <nav class="site-nav" aria-label="Main navigation">
-        <a href="#series">Series 01</a>
-        <a href="#custom">Custom artifacts</a>
+        <a href="#series">Series</a>
+        <a href="#custom">Custom</a>
         <a href="#archive">Archive</a>
         <a href="#about">About</a>
       </nav>
     </header>
 
-    <main id="top">
-      <section class="hero section-shell" aria-labelledby="hero-title">
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">artifact house / fictional ephemera</p>
           <h1 id="hero-title">Evidence of things that never happened.</h1>
@@ -40,13 +52,15 @@
           <div class="preview-card">
             <div class="preview-topline">
               <span>catalog no. RM-01</span>
-              <span>field status: observed</span>
+              <span>status: observed</span>
             </div>
             <div class="preview-object" role="img" aria-label="Abstract placeholder for a collectible artifact package">
+              <span class="specimen-tag">domestic object series</span>
               <span class="orb orb-one"></span>
               <span class="orb orb-two"></span>
               <span class="orbit-line"></span>
-              <strong>domestic object series</strong>
+              <strong>RM 01</strong>
+              <em>roomba ride</em>
             </div>
             <div class="preview-meta">
               <p><span>object type</span> narrative package</p>
@@ -86,10 +100,11 @@
         </div>
       </section>
 
-      <section class="archive-grid section-shell" id="archive" aria-label="Artifact archive cards">
+      <section class="archive-grid" id="archive" aria-label="Artifact archive cards">
         <article class="archive-card">
           <div class="card-number">RM-01</div>
           <h3>Roomba Ride</h3>
+          <p class="card-note">motion artifact / household route</p>
           <dl>
             <div><dt>Status</dt><dd>documented</dd></div>
             <div><dt>Object type</dt><dd>blind box record</dd></div>
@@ -99,19 +114,21 @@
         <article class="archive-card">
           <div class="card-number">RM-02</div>
           <h3>Paper Bag Incident</h3>
+          <p class="card-note">concealment artifact / acoustic event</p>
           <dl>
             <div><dt>Status</dt><dd>pending visual</dd></div>
             <div><dt>Object type</dt><dd>field insert</dd></div>
-            <div><dt>Evidence class</dt><dd>concealment event</dd></div>
+            <div><dt>Evidence class</dt><dd>bag occupancy</dd></div>
           </dl>
         </article>
         <article class="archive-card">
           <div class="card-number">RM-03</div>
           <h3>Fridge Light Witness</h3>
+          <p class="card-note">kitchen artifact / door event</p>
           <dl>
             <div><dt>Status</dt><dd>sample data</dd></div>
             <div><dt>Object type</dt><dd>specimen card</dd></div>
-            <div><dt>Evidence class</dt><dd>kitchen apparition</dd></div>
+            <div><dt>Evidence class</dt><dd>cold light study</dd></div>
           </dl>
         </article>
       </section>
@@ -125,17 +142,19 @@
             preserving. Built for the pets who deserve more than a portrait.
           </p>
         </div>
-        <ul class="artifact-list" aria-label="Custom artifact examples">
-          <li>blind box packaging</li>
-          <li>ID badges</li>
-          <li>cereal boxes</li>
-          <li>museum cards</li>
-          <li>field reports</li>
-          <li>tiny product inserts</li>
-        </ul>
-        <a class="button button-primary" id="waitlist" href="mailto:hello@dojo.haus?subject=Join%20the%20dojo.haus%20archive%20list">
-          Join the archive list
-        </a>
+        <div class="custom-panel">
+          <ul class="artifact-list" aria-label="Custom artifact examples">
+            <li>blind box packaging</li>
+            <li>ID badges</li>
+            <li>cereal boxes</li>
+            <li>museum cards</li>
+            <li>field reports</li>
+            <li>tiny product inserts</li>
+          </ul>
+          <a class="button button-primary" id="waitlist" href="mailto:hello@dojo.haus?subject=Join%20the%20dojo.haus%20archive%20list">
+            Join the archive list
+          </a>
+        </div>
       </section>
 
       <section class="about section-shell narrow" id="about" aria-labelledby="about-title">
