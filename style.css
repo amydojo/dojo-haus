@@ -75,7 +75,8 @@ a {
 .site-footer,
 .hero,
 .section-shell,
-.archive-grid {
+.catalog-index,
+.object-record {
   width: min(1120px, calc(100% - 36px));
   margin-inline: auto;
 }
@@ -145,7 +146,8 @@ a {
   padding: clamp(34px, 5vw, 76px) 0 clamp(74px, 9vw, 118px);
 }
 
-.section-shell {
+.section-shell,
+.catalog-index {
   margin-block: clamp(70px, 9vw, 128px);
   padding: clamp(28px, 4vw, 54px) 0;
   border-top: 1px solid var(--line);
@@ -163,7 +165,11 @@ a {
 .preview-meta span,
 .card-number,
 dt,
-.specimen-tag {
+.specimen-tag,
+.catalog-no,
+.catalog-type,
+.catalog-status,
+.process-list span {
   margin: 0 0 16px;
   color: var(--muted);
   font-size: 0.68rem;
@@ -185,12 +191,12 @@ h2 {
 }
 
 h1 {
-  max-width: 740px;
+  max-width: 780px;
   margin-bottom: 26px;
-  font-size: clamp(3.7rem, 8.1vw, 7.4rem);
+  font-size: clamp(3.35rem, 7.5vw, 6.8rem);
   font-weight: 820;
-  line-height: 0.9;
-  letter-spacing: -0.075em;
+  line-height: 0.92;
+  letter-spacing: -0.068em;
 }
 
 h2 {
@@ -198,7 +204,7 @@ h2 {
   font-size: clamp(2rem, 4.1vw, 4rem);
   font-weight: 820;
   line-height: 0.96;
-  letter-spacing: -0.062em;
+  letter-spacing: -0.058em;
 }
 
 h3 {
@@ -212,8 +218,11 @@ h3 {
 .intro p,
 .split p,
 .custom p,
-.about p,
-.feature-record p {
+.process p,
+.content-engine p,
+.object-copy p,
+.feature-record p,
+.section-kicker p {
   max-width: 650px;
   color: var(--muted);
   font-size: clamp(1.02rem, 1.38vw, 1.22rem);
@@ -251,7 +260,8 @@ h3 {
 .button:focus-visible,
 .site-nav a:focus-visible,
 .site-footer a:focus-visible,
-.brand-mark:focus-visible {
+.brand-mark:focus-visible,
+.catalog-row:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 4px;
 }
@@ -271,22 +281,13 @@ h3 {
   position: relative;
 }
 
-.artifact-preview::before {
-  display: none;
-}
-
-.preview-card,
-.feature-record,
-.archive-card {
-  border: 1px solid var(--line-strong);
-  background: rgba(251, 248, 241, 0.46);
-}
-
 .preview-card {
   max-width: 420px;
   margin-left: auto;
   padding: 16px;
+  border: 1px solid var(--line-strong);
   border-radius: var(--radius-record);
+  background: rgba(251, 248, 241, 0.46);
   box-shadow: 0 18px 54px rgba(44, 35, 25, 0.055);
 }
 
@@ -298,10 +299,10 @@ h3 {
   font-size: 0.58rem;
 }
 
-.preview-object {
+.preview-object,
+.object-visual {
   position: relative;
   display: grid;
-  min-height: 292px;
   place-items: center;
   overflow: hidden;
   border: 1px solid var(--line);
@@ -313,19 +314,27 @@ h3 {
   background-size: 24px 24px;
 }
 
+.preview-object {
+  min-height: 292px;
+}
+
 .preview-object::before,
-.preview-object::after {
+.preview-object::after,
+.object-visual::before,
+.object-visual::after {
   content: "";
   position: absolute;
   border: 1px solid rgba(23, 20, 17, 0.12);
 }
 
-.preview-object::before {
+.preview-object::before,
+.object-visual::before {
   inset: 18px;
   border-radius: 8px;
 }
 
-.preview-object::after {
+.preview-object::after,
+.object-visual::after {
   width: 1px;
   height: 116%;
   transform: rotate(38deg);
@@ -345,13 +354,16 @@ h3 {
 }
 
 .preview-object strong,
-.preview-object em {
+.preview-object em,
+.object-visual strong,
+.object-visual em {
   position: relative;
   z-index: 2;
   text-align: center;
 }
 
-.preview-object strong {
+.preview-object strong,
+.object-visual strong {
   color: rgba(23, 20, 17, 0.8);
   font-size: clamp(3.8rem, 8vw, 5.8rem);
   font-weight: 760;
@@ -359,7 +371,8 @@ h3 {
   letter-spacing: -0.075em;
 }
 
-.preview-object em {
+.preview-object em,
+.object-visual em {
   align-self: start;
   margin-top: -16px;
   color: var(--muted);
@@ -425,76 +438,86 @@ h3 {
   font-size: 0.58rem;
 }
 
-.split {
+.catalog-index {
+  margin-top: clamp(76px, 10vw, 140px);
+}
+
+.section-kicker {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.5fr);
-  gap: clamp(32px, 6vw, 80px);
+  grid-template-columns: minmax(160px, 0.34fr) 1fr;
+  gap: clamp(24px, 5vw, 72px);
   align-items: start;
+  margin-bottom: clamp(32px, 5vw, 56px);
 }
 
-.feature-record {
-  padding: 2px 0 0 clamp(24px, 4vw, 44px);
-  border: 0;
-  border-left: 1px solid var(--line);
-  background: transparent;
+.catalog-table {
+  border-top: 1px solid var(--line);
 }
 
-.feature-record::after {
-  display: none;
-}
-
-.record-label {
-  display: block;
-  margin-bottom: 22px;
-}
-
-.archive-grid {
+.catalog-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: 0.55fr 1.25fr 1fr 0.8fr;
   gap: 18px;
-  margin-block: clamp(44px, 7vw, 88px);
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  transition: color 160ms ease, background 160ms ease;
 }
 
-.archive-card {
-  min-height: 304px;
-  padding: 22px;
-  border-radius: var(--radius-record);
-  box-shadow: none;
-  transition: background 160ms ease, border-color 160ms ease;
+.catalog-row:hover {
+  background: rgba(251, 248, 241, 0.34);
 }
 
-.archive-card:hover {
-  background: rgba(251, 248, 241, 0.72);
-  border-color: rgba(23, 20, 17, 0.34);
+.catalog-no,
+.catalog-type,
+.catalog-status {
+  margin: 0;
+  font-size: 0.7rem;
 }
 
-.card-number {
-  display: inline-flex;
-  margin-bottom: 50px;
-  padding: 6px 9px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(235, 226, 214, 0.58);
-  font-size: 0.58rem;
+.catalog-title {
+  font-size: clamp(1.22rem, 2vw, 1.82rem);
+  font-weight: 760;
+  letter-spacing: -0.045em;
 }
 
-.card-note {
-  color: var(--muted-soft);
-  font-size: 0.9rem;
-}
-
-dl {
+.object-record {
   display: grid;
-  gap: 0;
-  margin: 28px 0 0;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1fr);
+  gap: clamp(34px, 7vw, 96px);
+  align-items: center;
+  margin-block: clamp(72px, 10vw, 148px);
 }
 
+.object-visual {
+  min-height: 420px;
+  border-color: var(--line-strong);
+}
+
+.object-visual strong {
+  font-size: clamp(4rem, 10vw, 7rem);
+}
+
+.object-visual em {
+  margin-top: -72px;
+}
+
+.object-copy p {
+  max-width: 580px;
+}
+
+.object-meta {
+  margin-top: 38px;
+  border-top: 1px solid var(--line);
+}
+
+.object-meta div,
 dl div {
   display: grid;
-  grid-template-columns: 0.82fr 1fr;
-  gap: 12px;
-  padding: 9px 0;
-  border-top: 1px solid var(--line);
+  grid-template-columns: 0.55fr 1fr;
+  gap: 18px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 dt,
@@ -507,7 +530,8 @@ dd {
   font-size: 0.9rem;
 }
 
-.custom {
+.custom,
+.content-engine {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(280px, 0.66fr);
   gap: clamp(28px, 6vw, 76px);
@@ -523,7 +547,8 @@ dd {
   width: fit-content;
 }
 
-.artifact-list {
+.artifact-list,
+.content-hooks {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
@@ -532,13 +557,45 @@ dd {
   list-style: none;
 }
 
-.artifact-list li {
+.artifact-list li,
+.content-hooks li {
   padding: 8px 11px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: rgba(235, 226, 214, 0.46);
   color: var(--muted);
   font-size: 0.88rem;
+}
+
+.content-hooks {
+  display: grid;
+}
+
+.content-hooks li {
+  border-radius: 14px;
+  line-height: 1.4;
+}
+
+.process-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(18px, 4vw, 42px);
+  margin-top: 40px;
+}
+
+.process-list div {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.process-list span {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.process-list p {
+  color: var(--muted);
+  font-size: 0.98rem;
 }
 
 .site-footer {
@@ -571,8 +628,10 @@ dd {
 
 @media (max-width: 900px) {
   .hero,
-  .split,
-  .custom {
+  .section-kicker,
+  .object-record,
+  .custom,
+  .content-engine {
     grid-template-columns: 1fr;
   }
 
@@ -585,18 +644,17 @@ dd {
     margin-left: 0;
   }
 
-  .feature-record {
-    padding: 28px 0 0;
-    border-left: 0;
-    border-top: 1px solid var(--line);
+  .catalog-row {
+    grid-template-columns: 0.55fr 1.45fr;
   }
 
-  .archive-grid {
+  .catalog-type,
+  .catalog-status {
+    grid-column: 2;
+  }
+
+  .process-list {
     grid-template-columns: 1fr;
-  }
-
-  .archive-card {
-    min-height: auto;
   }
 
   .custom .button {
@@ -614,7 +672,8 @@ dd {
   .site-footer,
   .hero,
   .section-shell,
-  .archive-grid {
+  .catalog-index,
+  .object-record {
     width: min(100% - 24px, 1120px);
   }
 
@@ -637,15 +696,17 @@ dd {
   }
 
   h1 {
-    font-size: clamp(3.05rem, 15vw, 5rem);
-    letter-spacing: -0.065em;
+    font-size: clamp(3rem, 14vw, 4.8rem);
+    letter-spacing: -0.058em;
   }
 
   h2 {
-    letter-spacing: -0.052em;
+    letter-spacing: -0.048em;
   }
 
-  .section-shell {
+  .section-shell,
+  .catalog-index,
+  .object-record {
     margin-block: 64px;
   }
 
@@ -667,10 +728,20 @@ dd {
     min-height: 276px;
   }
 
-  .preview-object em {
-    margin-top: -14px;
+  .object-visual {
+    min-height: 320px;
   }
 
+  .object-visual em {
+    margin-top: -40px;
+  }
+
+  .catalog-row {
+    gap: 8px 14px;
+    padding: 16px 0;
+  }
+
+  .object-meta div,
   dl div {
     grid-template-columns: 1fr;
   }
